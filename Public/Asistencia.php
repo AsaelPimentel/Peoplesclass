@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script>
     // Cambiar el título de la página a "Inicio"
     cambiarTituloPagina("Asistencia");
+
 </script>
 
 
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         ?>
                     </select>
                 </div>
-                <button type="submit" name="generarCodigo" class="btn btn-outline-primary">Generar Código</button>
+                <button type="submit" name="generarCodigo" id="generarCodigo" class="btn btn-outline-primary" disabled>Generar Código</button>
             </form>
         </div>
         <div class="col-md-8">
