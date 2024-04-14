@@ -1,0 +1,75 @@
+
+.demo {
+	background: #345923;
+	background: -moz-linear-gradient(left, #345923 0%, #345923 50%, #345923 100%);
+	background: -webkit-linear-gradient(left, #345923 0%, #345923 50%, #345923 100%);
+	background: linear-gradient(to right, #345923 0%, #345923 50%, #345923 100%);
+	}
+    /* Estilos personalizados */
+.navbar-nav .nav-link {
+    color: white; /* Cambiar el color del texto a blanco */
+}
+
+/* Opcional: Cambiar el color del texto del enlace activo */
+.navbar-nav .nav-item.active .nav-link {
+    color: white; /* Cambiar el color del texto a blanco */
+}
+/* Estilos personalizados */
+.navbar-nav .nav-item .nav-link {
+    color: white; /* Cambiar el color del texto a blanco para todos los enlaces */
+}.demo,
+.dropdown-menu {
+    background: #345923;
+    background: -moz-linear-gradient(left, #345923 0%, #345923 50%, #345923 100%);
+    background: -webkit-linear-gradient(left, #345923 0%, #345923 50%, #345923 100%);
+    background: linear-gradient(to right, #345923 0%, #345923 50%, #345923 100%);
+}
+
+/* Estilo del texto dentro del submenú */
+.dropdown-menu a {
+    color: white;
+}
+/* Estilo del texto dentro del submenú */
+.dropdown-menu a {
+    color: white;
+}
+
+/* Estilo del fondo del elemento del menú al hacer hover */
+.dropdown-menu a:hover {
+    background-color: #528C37;
+}
+/* Estilo del texto del menú principal */
+.navbar-nav .nav-link {
+    color: white;
+}
+
+/* Estilo del fondo del menú principal al hacer hover */
+.navbar-nav .nav-item:hover .nav-link {
+    background-color: #528C37;
+}
+.Fondo1 {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    /* Ajusta el padding según sea necesario */}
+
+    /* Estilos para la tabla */
+.tabla-personalizada th, .tabla-personalizada td {
+        color: white;
+    background-color: #70BF4B; /* Color de fondo para celdas de contenido */
+}
+
+.tabla-personalizada .table-dark th {
+    background-color: #345923;
+}
+
+.tabla-personalizada.table-striped tbody tr:nth-of-type(odd) td {
+    background-color: #A6A6A6;
+}
+
+.tabla-personalizada.table-hover tbody tr:hover td {
+    background-color: #cccccc;
+}
+.text-center {
+    text-align: center; /* Establece el texto alineado al centro */
+}

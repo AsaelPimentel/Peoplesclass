@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="../Assets/Img/Logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's | Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Assets/css/Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../Assets/js/Login.js"></script>
+</head>
+
+<body>
+    <!-- Overlay de carga -->
+    <!-- <div class="overlay">
+        <div class="spinner"></div>
+    </div> -->
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-6">
+                <div class="login-box">
+                    <div class="logo mb-4 text-center">
+                        <img src="../Assets/Img/Logo.png" alt="Logo de la institución">
+                    </div>
+                    <h3 class="text-primary font-weight-bold">Inicio de sesión administrativo</h3>
+                    <!-- Agregando la clase "elegant-heading" para los estilos personalizados -->
+                    <form action="Login.php" method="post">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-user-circle" aria-hidden="true"
+                                            onclick="activateInput('socio', event)"></i></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Usuario" required id="socio"
+                                    name="socio">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"
+                                            onclick="activateInput('pass', event)"></i></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Contraseña" required id="pass"
+                                    name="pass">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-sign-in-alt mr-2"></i>
+                                Iniciar sesión
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-center">
+                        <a href="../Index.html" style="color: white;">Iniciar sesión como socio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap y Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('loaded');
+        });
+    </script>
+    <script>
+        function activateInput(id, event) {
+            event.stopPropagation(); // Detiene la propagación del evento
+            document.getElementById(id).focus();
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.location.search.includes('error=1')) {
+                $("#modalError").modal("show");
+            }
+            if (window.location.search.includes('error=2')) {
+                $("#modalEstado").modal("show");
+            }
+        });
+    </script>
+
+    <!-- Modal de error de autenticación -->
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalErrorLabel">Error de Inicio de sesión</h5>
+                    <button type="button" class="close custom-close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    El nombre de usuario o la contraseña son incorrectos. Por favor, inténtalo de nuevo.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar mensaje de estado -->
+    <div class="modal fade" id="modalEstado" tabindex="-1" role="dialog" aria-labelledby="modalEstadoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEstadoLabel">Error de permisos de Usuario</h5>
+                    <button type="button" class="close custom-close-btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tu estado de usuario no te permite acceder en este momento. Por favor, ponte en contacto con el
+                    administrador.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* Estilo personalizado para el botón de cerrar (x) en el modal */
+        .custom-close-btn {
+            width: 50px;
+            /* Define el ancho deseado */
+        }
+    </style>
+
+</body>
+
+</html>
