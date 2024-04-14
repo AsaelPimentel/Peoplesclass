@@ -15,6 +15,13 @@ $nombreUsuario = $_SESSION['NombreUsuario'];
 // Consulta para obtener las clases asociadas al usuario
 $query_clases = "SELECT NID_Clase, N_Clase FROM vw_clases WHERE Nombre_Entrenador = '$nombreUsuario'";
 $resultado_clases = mysqli_query($conexion, $query_clases);
+
+// Si se envió el formulario, generar el código y el código QR correspondiente
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $resultado = generarCodigoAleatorio();
+    $codigoAleatorio = $resultado['codigo'];
+    $ruta_qr = $resultado['qr_path'];
+}
 ?>
 
 <script>
@@ -26,7 +33,7 @@ $resultado_clases = mysqli_query($conexion, $query_clases);
 <div class="container p-4 text-center">
     <div class="row">
         <div class="col-md-4">
-            <form method="post">
+            <form method="POST">
                 <div class="form-group">
                     <label for="fecha_caducidad">Fecha de caducidad:</label>
                     <input type="datetime-local" name="fecha_caducidad" id="fecha_caducidad" class="form-control" placeholder="Seleccione la fecha de caducidad" aria-describedby="helpId">
@@ -48,15 +55,17 @@ $resultado_clases = mysqli_query($conexion, $query_clases);
             </form>
         </div>
         <div class="col-md-8">
-            <div class="container p-4 text-center">
+            <div class=" text-center">
                 <div class="card card-body">
-                    <?php
-                    // Si se envió el formulario, genera el código
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        $codigoAleatorio = generarCodigoAleatorio();
-                        echo "<div><h4>El código generado es: $codigoAleatorio</h4></div>";
-                    }
-                    ?>
+                <?php
+                // Mostrar el código generado y el código QR si están disponibles
+                if ($codigoAleatorio != '') {
+                    echo "<div><h4>El código generado es: $codigoAleatorio</h4></div>";
+                    echo "<img src='$ruta_qr' alt='Código QR' class='img-fluid rounded mx-auto d-block mt-4' style='max-width: 500px; max-height: 500px;'>";
+                } else {
+                    echo "<div><p>Aún no se ha generado ningún código.</p></div>";
+                }
+                ?>
                 </div>
             </div>
         </div>
