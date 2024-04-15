@@ -54,13 +54,16 @@ $ruta_qr = $_GET['qr_path'] ?? '';
                 </div>
                 <div class="form-group">
                   <label for="codigo">Codigo</label>
-                  <input type="text" name="codigo" id="codigo" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input type="text" name="codigo" id="codigo" class="form-control" placeholder="Codigo de 10 digitos" aria-describedby="helpId" maxlength="10">
                   <small id="helpId" class="text-muted">Ingrese el código manualmente</small>
                 </div>
-                <!-- Este campo de entrada oculto no parece estar siendo utilizado -->
-                <!-- Si no es necesario, puedes eliminarlo -->
-                <input type="text" value="<?php echo $codigoAleatorio;?>" readonly style="display: none;">
-                <button type="submit" name="generarCodigo" id="generarCodigo" class="btn btn-outline-primary" >Generar Código</button>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="1" id="generarAleatorio" name="generarAleatorio">
+                  <label class="form-check-label" for="generarAleatorio">
+                    Generar código aleatorio
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-outline-primary" >Generar Código</button>
             </form>
         </div>
         <div class="col-md-8">

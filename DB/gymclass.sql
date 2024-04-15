@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2024 a las 00:38:19
+-- Tiempo de generación: 15-04-2024 a las 03:13:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `gymclass`
 --
+CREATE DATABASE IF NOT EXISTS `gymclass` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
+USE `gymclass`;
 
 -- --------------------------------------------------------
 
@@ -32,6 +34,11 @@ CREATE TABLE `cat_asistencia` (
   `N_Asistio` varchar(50) NOT NULL COMMENT 'dato texto de la asitencia ej si asistio o no asistio'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de catoalogo de asistencias ';
 
+--
+-- Truncar tablas antes de insertar `cat_asistencia`
+--
+
+TRUNCATE TABLE `cat_asistencia`;
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,11 @@ CREATE TABLE `cat_clases` (
   `ID_Entrenador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Truncar tablas antes de insertar `cat_clases`
+--
+
+TRUNCATE TABLE `cat_clases`;
 --
 -- Volcado de datos para la tabla `cat_clases`
 --
@@ -67,6 +79,11 @@ CREATE TABLE `cat_codigos` (
   `ID_Clase` int(11) NOT NULL COMMENT 'Asociar el codigo a una clase para tener un mejor control'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla de codigos para un mejor control de los mismos';
 
+--
+-- Truncar tablas antes de insertar `cat_codigos`
+--
+
+TRUNCATE TABLE `cat_codigos`;
 -- --------------------------------------------------------
 
 --
@@ -79,6 +96,11 @@ CREATE TABLE `cat_entrenadores` (
   `ID_Clase` int(11) DEFAULT NULL COMMENT 'Enlace de las clases del entrenador '
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+--
+-- Truncar tablas antes de insertar `cat_entrenadores`
+--
+
+TRUNCATE TABLE `cat_entrenadores`;
 --
 -- Volcado de datos para la tabla `cat_entrenadores`
 --
@@ -97,6 +119,11 @@ CREATE TABLE `cat_estados` (
   `N_Estado` varchar(50) NOT NULL COMMENT 'Nombre del estado (activo, inactivo, etc)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar estado disponibles en el sistema';
 
+--
+-- Truncar tablas antes de insertar `cat_estados`
+--
+
+TRUNCATE TABLE `cat_estados`;
 --
 -- Volcado de datos para la tabla `cat_estados`
 --
@@ -117,6 +144,11 @@ CREATE TABLE `cat_generos` (
   `N_Genero` varchar(50) NOT NULL COMMENT 'Nombre del genero'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar generos disponibles en el sistema';
 
+--
+-- Truncar tablas antes de insertar `cat_generos`
+--
+
+TRUNCATE TABLE `cat_generos`;
 --
 -- Volcado de datos para la tabla `cat_generos`
 --
@@ -142,6 +174,11 @@ CREATE TABLE `cat_horarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT=' Tabla para almacenar horarios de actividades';
 
 --
+-- Truncar tablas antes de insertar `cat_horarios`
+--
+
+TRUNCATE TABLE `cat_horarios`;
+--
 -- Volcado de datos para la tabla `cat_horarios`
 --
 
@@ -160,6 +197,11 @@ CREATE TABLE `cat_recursos` (
   `N_Recurso` varchar(100) NOT NULL COMMENT 'nombre del tipo de recurso ejmplo video imagen etc'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de realcion de recursos de apoyo';
 
+--
+-- Truncar tablas antes de insertar `cat_recursos`
+--
+
+TRUNCATE TABLE `cat_recursos`;
 -- --------------------------------------------------------
 
 --
@@ -171,6 +213,11 @@ CREATE TABLE `cat_roles` (
   `N_Rol` varchar(50) NOT NULL COMMENT 'Nombre del rol ej: Administrador, Entrenador, etc'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar roles disponibles en el sistema';
 
+--
+-- Truncar tablas antes de insertar `cat_roles`
+--
+
+TRUNCATE TABLE `cat_roles`;
 --
 -- Volcado de datos para la tabla `cat_roles`
 --
@@ -196,6 +243,11 @@ CREATE TABLE `tb_asistencias` (
   `N_Comentario` text DEFAULT NULL COMMENT 'comatario opcional de la clase por parte del socio'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de asistencias de clases';
 
+--
+-- Truncar tablas antes de insertar `tb_asistencias`
+--
+
+TRUNCATE TABLE `tb_asistencias`;
 -- --------------------------------------------------------
 
 --
@@ -216,6 +268,11 @@ CREATE TABLE `tb_empleados` (
   `ID_Estado` int(11) NOT NULL COMMENT 'ID del estado del empleado (activo, inactivo, etc.)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar información de empleados';
 
+--
+-- Truncar tablas antes de insertar `tb_empleados`
+--
+
+TRUNCATE TABLE `tb_empleados`;
 --
 -- Volcado de datos para la tabla `tb_empleados`
 --
@@ -238,6 +295,11 @@ CREATE TABLE `tb_material` (
   `N_Descripcion` text NOT NULL COMMENT 'descripcion general'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de recursos generales de apoyo a la clases ';
 
+--
+-- Truncar tablas antes de insertar `tb_material`
+--
+
+TRUNCATE TABLE `tb_material`;
 -- --------------------------------------------------------
 
 --
@@ -258,6 +320,11 @@ CREATE TABLE `tb_socios` (
   `ID_Estado` int(11) NOT NULL COMMENT 'Indeitifcador del estado del usuario (Activo, inactivo, etc)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla socios para accesos al sistema y datos generales';
 
+--
+-- Truncar tablas antes de insertar `tb_socios`
+--
+
+TRUNCATE TABLE `tb_socios`;
 --
 -- Volcado de datos para la tabla `tb_socios`
 --
@@ -348,7 +415,7 @@ CREATE TABLE `vw_socios` (
 --
 DROP TABLE IF EXISTS `vw_clases`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_clases`  AS SELECT `cc`.`NID_Clase` AS `NID_Clase`, coalesce(`cc`.`N_Clase`,'-- Seleccionar --') AS `N_Clase`, coalesce(`ch`.`N_Dia`,'') AS `N_Dia`, coalesce(`ch`.`N_HoraInicio`,'') AS `N_HoraInicio`, coalesce(`ch`.`N_HoraFin`,'') AS `N_HoraFin`, coalesce(`ch`.`N_Turno`,'') AS `N_Turno`, coalesce(`ce`.`NID_Entrenador`,'') AS `ID_Entrenador`, coalesce(`te`.`N_Nombre`,'') AS `Nombre_Entrenador` FROM (((`cat_clases` `cc` left join `cat_horarios` `ch` on(`cc`.`ID_Horario` = `ch`.`NID_Horario`)) left join `cat_entrenadores` `ce` on(`cc`.`ID_Entrenador` = `ce`.`NID_Entrenador`)) left join `tb_empleados` `te` on(`ce`.`ID_Empleado` = `te`.`N_Empleado`)) ;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_clases`  AS SELECT `cc`.`NID_Clase` AS `NID_Clase`, coalesce(`cc`.`N_Clase`,'-- Seleccionar --') AS `N_Clase`, coalesce(`ch`.`N_Dia`,'') AS `N_Dia`, coalesce(`ch`.`N_HoraInicio`,'') AS `N_HoraInicio`, coalesce(`ch`.`N_HoraFin`,'') AS `N_HoraFin`, coalesce(`ch`.`N_Turno`,'') AS `N_Turno`, coalesce(`ce`.`NID_Entrenador`,'') AS `ID_Entrenador`, coalesce(`te`.`N_Nombre`,'') AS `Nombre_Entrenador` FROM (((`cat_clases` `cc` left join `cat_horarios` `ch` on(`cc`.`ID_Horario` = `ch`.`NID_Horario`)) left join `cat_entrenadores` `ce` on(`cc`.`ID_Entrenador` = `ce`.`NID_Entrenador`)) left join `tb_empleados` `te` on(`ce`.`ID_Empleado` = `te`.`N_Empleado`)) ;
 
 -- --------------------------------------------------------
 
@@ -357,7 +424,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_empleados`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_empleados`  AS SELECT `e`.`N_Empleado` AS `N_Empleado`, `e`.`N_Usuario` AS `N_Usuario`, `e`.`N_Password` AS `N_Password`, `r`.`NID_Rol` AS `ID_Rol`, `r`.`N_Rol` AS `N_Rol`, `g`.`NID_Genero` AS `ID_Genero`, `g`.`N_Genero` AS `N_Genero`, `e`.`N_Nombre` AS `N_Nombre`, `e`.`N_ApellidoPa` AS `N_ApellidoPa`, `e`.`N_ApellidoMa` AS `N_ApellidoMa`, `e`.`N_Telefono` AS `N_Telefono`, `e`.`N_Correo` AS `N_Correo`, `est`.`NID_Estado` AS `ID_Estado`, `est`.`N_Estado` AS `N_Estado` FROM (((`tb_empleados` `e` join `cat_roles` `r` on(`e`.`ID_Rol` = `r`.`NID_Rol`)) join `cat_generos` `g` on(`e`.`ID_Genero` = `g`.`NID_Genero`)) join `cat_estados` `est` on(`e`.`ID_Estado` = `est`.`NID_Estado`)) ;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_empleados`  AS SELECT `e`.`N_Empleado` AS `N_Empleado`, `e`.`N_Usuario` AS `N_Usuario`, `e`.`N_Password` AS `N_Password`, `r`.`NID_Rol` AS `ID_Rol`, `r`.`N_Rol` AS `N_Rol`, `g`.`NID_Genero` AS `ID_Genero`, `g`.`N_Genero` AS `N_Genero`, `e`.`N_Nombre` AS `N_Nombre`, `e`.`N_ApellidoPa` AS `N_ApellidoPa`, `e`.`N_ApellidoMa` AS `N_ApellidoMa`, `e`.`N_Telefono` AS `N_Telefono`, `e`.`N_Correo` AS `N_Correo`, `est`.`NID_Estado` AS `ID_Estado`, `est`.`N_Estado` AS `N_Estado` FROM (((`tb_empleados` `e` join `cat_roles` `r` on(`e`.`ID_Rol` = `r`.`NID_Rol`)) join `cat_generos` `g` on(`e`.`ID_Genero` = `g`.`NID_Genero`)) join `cat_estados` `est` on(`e`.`ID_Estado` = `est`.`NID_Estado`)) ;
 
 -- --------------------------------------------------------
 
@@ -366,7 +433,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_entrenadores`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_entrenadores`  AS SELECT `ce`.`NID_Entrenador` AS `NID_Entrenador`, `te`.`N_Nombre` AS `Nombre_Empleado`, `te`.`N_ApellidoPa` AS `Apellido_Paterno`, `te`.`N_ApellidoMa` AS `Apellido_Materno` FROM (`cat_entrenadores` `ce` join `tb_empleados` `te` on(`ce`.`ID_Empleado` = `te`.`N_Empleado`)) ;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_entrenadores`  AS SELECT `ce`.`NID_Entrenador` AS `NID_Entrenador`, `te`.`N_Nombre` AS `Nombre_Empleado`, `te`.`N_ApellidoPa` AS `Apellido_Paterno`, `te`.`N_ApellidoMa` AS `Apellido_Materno` FROM (`cat_entrenadores` `ce` join `tb_empleados` `te` on(`ce`.`ID_Empleado` = `te`.`N_Empleado`)) ;
 
 -- --------------------------------------------------------
 
@@ -375,7 +442,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vw_socios`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_socios`  AS SELECT `s`.`N_Socio` AS `N_Socio`, `s`.`N_Usuario` AS `N_Usuario`, `s`.`N_Password` AS `N_Password`, `g`.`NID_Genero` AS `ID_Genero`, `g`.`N_Genero` AS `N_Genero`, `s`.`N_Nombre` AS `N_Nombre`, `s`.`N_ApellidoPa` AS `N_ApellidoPa`, `s`.`N_ApellidoMa` AS `N_ApellidoMa`, `s`.`N_Telefono` AS `N_Telefono`, `s`.`N_Correo` AS `N_Correo`, `s`.`N_Clases` AS `N_Clases`, `c`.`N_Clase` AS `N_Clase`, `e`.`NID_Estado` AS `ID_Estado`, `e`.`N_Estado` AS `N_Estado` FROM (((`tb_socios` `s` join `cat_generos` `g` on(`s`.`N_Genero` = `g`.`NID_Genero`)) join `cat_estados` `e` on(`s`.`ID_Estado` = `e`.`NID_Estado`)) join `cat_clases` `c` on(`s`.`N_Clases` = `c`.`NID_Clase`)) ;
+CREATE OR REPLACE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_socios`  AS SELECT `s`.`N_Socio` AS `N_Socio`, `s`.`N_Usuario` AS `N_Usuario`, `s`.`N_Password` AS `N_Password`, `g`.`NID_Genero` AS `ID_Genero`, `g`.`N_Genero` AS `N_Genero`, `s`.`N_Nombre` AS `N_Nombre`, `s`.`N_ApellidoPa` AS `N_ApellidoPa`, `s`.`N_ApellidoMa` AS `N_ApellidoMa`, `s`.`N_Telefono` AS `N_Telefono`, `s`.`N_Correo` AS `N_Correo`, `s`.`N_Clases` AS `N_Clases`, `c`.`N_Clase` AS `N_Clase`, `e`.`NID_Estado` AS `ID_Estado`, `e`.`N_Estado` AS `N_Estado` FROM (((`tb_socios` `s` join `cat_generos` `g` on(`s`.`N_Genero` = `g`.`NID_Genero`)) join `cat_estados` `e` on(`s`.`ID_Estado` = `e`.`NID_Estado`)) join `cat_clases` `c` on(`s`.`N_Clases` = `c`.`NID_Clase`)) ;
 
 --
 -- Índices para tablas volcadas
@@ -400,7 +467,6 @@ ALTER TABLE `cat_clases`
 --
 ALTER TABLE `cat_codigos`
   ADD PRIMARY KEY (`NID_Codigos`),
-  ADD UNIQUE KEY `N_Codigo` (`N_Codigo`),
   ADD KEY `fk_clase` (`ID_Clase`);
 
 --
@@ -500,7 +566,7 @@ ALTER TABLE `cat_clases`
 -- AUTO_INCREMENT de la tabla `cat_codigos`
 --
 ALTER TABLE `cat_codigos`
-  MODIFY `NID_Codigos` int(11) NOT NULL AUTO_INCREMENT COMMENT 'idenitficador de codigos para hcer un historial de codigos', AUTO_INCREMENT=2;
+  MODIFY `NID_Codigos` int(11) NOT NULL AUTO_INCREMENT COMMENT 'idenitficador de codigos para hcer un historial de codigos';
 
 --
 -- AUTO_INCREMENT de la tabla `cat_entrenadores`

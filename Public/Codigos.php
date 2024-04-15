@@ -16,9 +16,17 @@ $nombreUsuario = $_SESSION['NombreUsuario'];
 
 // Recuperar los datos del formulario si se envió mediante POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica si se seleccionó la opción de generar código aleatorio
+    if (isset($_POST['generarAleatorio']) && $_POST['generarAleatorio'] == '1') {
+        // Genera un código aleatorio de 10 caracteres
+        $codigo_ingresado = substr(str_shuffle("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"), 0, 10);
+    } else {
+        // Si no se seleccionó la opción de generar aleatorio, recupera el código ingresado manualmente
+        $codigo_ingresado = $_POST['codigo'];
+    }
+
     $fecha_caducidad = $_POST['fecha_caducidad'];
     $id_clase = $_POST['clase'];
-    $codigo_ingresado = $_POST['codigo'];
 
     // Insertar los datos en la base de datos
     $conexion = ConexionBD::obtenerConexion();
