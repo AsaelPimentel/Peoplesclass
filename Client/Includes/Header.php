@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>People's | </title>
     <link rel="icon" href="../Assets/Img/Logo.png" type="image/png">
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,7 +27,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="color:white;">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="Clases.php" style="color:white;">Mis clases <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style="color:white;">Link</a>
@@ -52,3 +52,9 @@
       </form>
     </div>
   </nav>
+  <script>
+    function cambiarTituloPagina(nombrePagina) {
+        var titulo = "People's | " + nombrePagina;
+        document.title = titulo;
+    }
+</script>

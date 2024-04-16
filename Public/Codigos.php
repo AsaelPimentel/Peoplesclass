@@ -7,7 +7,7 @@ require_once('../Resource/phpqrcode/qrlib.php'); // Incluye la librería para ge
 // Verifica si existen las variables de sesión NombreUsuario y RolUsuario
 if (!isset($_SESSION['NombreUsuario']) || !isset($_SESSION['RolUsuario']) || $_SESSION['RolUsuario'] != 3) {
     // Si alguna de las variables de sesión no existe o el RolUsuario no es igual a 3, redirecciona al login
-    header("Location: login.php");
+    header("Location: index.html");
     exit(); // Termina la ejecución del script después de redireccionar
 }
 

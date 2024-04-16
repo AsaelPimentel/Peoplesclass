@@ -43,56 +43,65 @@ $nombreEmpleado = $_SESSION['NombreUsuario'];
         if (!$resultado_clases_usuario) {
             die("Error al obtener las clases del usuario: " . mysqli_error($conexion));
         }
-        while ($fila_clase = mysqli_fetch_assoc($resultado_clases_usuario)) { ?>
-          <div class="card text-white bg-secondary m-2" style="max-width: 18rem;">
-            <div class="card-header">
-              <?php
-              // Determinar el icono según el tipo de clase
-              $icono = '';
-              switch ($fila_clase['N_Clase']) {
-                case 'Spinning':
-                  $icono = '<i class="fas fa-biking"></i>';
-                  break;
-                case 'Zumba':
-                  $icono = '<i class="fas fa-drum"></i>';
-                  break;
-                case 'Ejercicio Funcional':
-                  $icono = '<i class="fas fa-dumbbell"></i>';
-                  break;
-                case 'Fit Combat':
-                  $icono = '<i class="fas fa-fist-raised"></i>';
-                  break;
-                case 'Ejercicio de Rebote':
-                  $icono = '<i class="fas fa-bounce"></i>';
-                  break;
-                case 'Yoga':
-                  $icono = '<i class="fas fa-om"></i>';
-                  break;
-                case 'Boot Combat':
-                  $icono = '<i class="fas fa-boot"></i>';
-                  break;
-                case 'Steel Combat':
-                  $icono = '<i class="fas fa-shield-alt"></i>';
-                  break;
-                case 'Steel Jump':
-                  $icono = '<i class="fas fa-tachometer-alt"></i>';
-                  break;
-                default:
+        
+        // Verificar si hay clases para el usuario y el día actual
+        if (mysqli_num_rows($resultado_clases_usuario) > 0) {
+            while ($fila_clase = mysqli_fetch_assoc($resultado_clases_usuario)) { ?>
+              <div class="card text-white bg-secondary m-2" style="max-width: 18rem;">
+                <div class="card-header">
+                  <?php
+                  // Determinar el icono según el tipo de clase
                   $icono = '';
-                  break;
-              }
-              echo $icono . ' ' . $fila_clase['N_Clase'];
-              ?>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Día: <?php echo $fila_clase['N_Dia']; ?></p>
-              <p class="card-text">Horario: <?php echo $fila_clase['N_HoraInicio'] . " - " . $fila_clase['N_HoraFin']; ?></p>
-            </div>
-          </div>
-        <?php } ?>
+                  switch ($fila_clase['N_Clase']) {
+                    case 'Spinning':
+                      $icono = '<i class="fas fa-biking"></i>';
+                      break;
+                    case 'Zumba':
+                      $icono = '<i class="fas fa-drum"></i>';
+                      break;
+                    case 'Ejercicio Funcional':
+                      $icono = '<i class="fas fa-dumbbell"></i>';
+                      break;
+                    case 'Fit Combat':
+                      $icono = '<i class="fas fa-fist-raised"></i>';
+                      break;
+                    case 'Ejercicio de Rebote':
+                      $icono = '<i class="fas fa-bounce"></i>';
+                      break;
+                    case 'Yoga':
+                      $icono = '<i class="fas fa-om"></i>';
+                      break;
+                    case 'Boot Combat':
+                      $icono = '<i class="fas fa-boot"></i>';
+                      break;
+                    case 'Steel Combat':
+                      $icono = '<i class="fas fa-shield-alt"></i>';
+                      break;
+                    case 'Steel Jump':
+                      $icono = '<i class="fas fa-tachometer-alt"></i>';
+                      break;
+                    default:
+                      $icono = '';
+                      break;
+                  }
+                  echo $icono . ' ' . $fila_clase['N_Clase'];
+                  ?>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">Día: <?php echo $fila_clase['N_Dia']; ?></p>
+                  <p class="card-text">Horario: <?php echo $fila_clase['N_HoraInicio'] . " - " . $fila_clase['N_HoraFin']; ?></p>
+                </div>
+              </div>
+            <?php } 
+        } else {
+            // Si no hay clases, mostrar un mensaje
+            echo "<p class='text-center'>No tienes clases para el día de hoy.</p>";
+        }
+        ?>
       </div>
     </div>
   </div>
 </div>
+
 
 <?php include('Includes/Footer.php'); ?>

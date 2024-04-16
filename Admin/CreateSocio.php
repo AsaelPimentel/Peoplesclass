@@ -15,11 +15,12 @@ if(!isset($_SESSION['NombreUsuario']) || !isset($_SESSION['RolUsuario']) || $_SE
         $apellidopa = $_POST['apeliido1'] ;
         $apellidoma = !empty($_POST['apellido2']) ? $_POST['apellido2'] : 'Null'; // Valor por defecto si está vacío
         $telefono   = !empty($_POST['telefono']) ? $_POST['telefono'] : '(777) 777 77 77'; // Valor por defecto si está vacío
+        $clase      = $_POST['clase']; 
         $correo     = !empty($_POST['email']) ? $_POST['email'] : 'ejemplo@ejemplo.com'; // Valor por defecto si está vacío
         $estado     = 3 ;
 
-        $query = "INSERT INTO tb_socios (N_Usuario, N_Password, N_Genero, N_Nombre, N_ApellidoPa, N_ApellidoMa, N_Telefono, N_Correo, ID_Estado) 
-        VALUES ('$usuario', '$password', '$genero', '$nombre', '$apellidopa', '$apellidoma', '$telefono', '$correo', '$estado')";
+        $query = "INSERT INTO tb_socios (N_Usuario, N_Password, N_Genero, N_Nombre, N_ApellidoPa, N_ApellidoMa, N_Telefono, N_Correo, N_Clases, ID_Estado) 
+        VALUES ('$usuario', '$password', '$genero', '$nombre', '$apellidopa', '$apellidoma', '$telefono', '$correo', '$clase', '$estado')";
         $resultado = mysqli_query($conexion, $query);
         if ($resultado) {
             session_start();

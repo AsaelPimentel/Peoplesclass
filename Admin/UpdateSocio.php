@@ -82,8 +82,8 @@ if (isset($_GET['id'])) {
                                         $query_roles = "SELECT NID_Clase,N_Clase FROM cat_clases";
                                         $resultado_roles = mysqli_query($conexion, $query_roles);
                                         while ($row = mysqli_fetch_assoc($resultado_roles)) {
-                                            $selected = ($row['NID_Clase'] == $clase) ? 'selected' : '';
-                                            echo "<option value='" . $row['NID_Clase'] . "' $selected>" . $row['N_Clase'] . "</option>";
+                                            $selected = ($row['N_Clase'] == $clase) ? 'selected' : '';
+                                            echo "<option value='" . $row['N_Clase'] . "' $selected>" . $row['N_Clase'] . "</option>";
                                         }
                                         ?>
                                     </select>
@@ -145,7 +145,7 @@ if (isset($_GET['id'])) {
                         </div>
                     </div>
                     <button type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#confirmacionModal">Actualizar</button>
-                    <a href="Empleados.php" class="btn btn-secondary btn-block">Cancelar</a>
+                    <a href="Socios.php" class="btn btn-secondary btn-block">Cancelar</a>
                     <input type="hidden" name="Actualizar" id="Actualizar">
                 </form>
             </div>

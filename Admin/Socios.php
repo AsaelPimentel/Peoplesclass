@@ -112,13 +112,12 @@ $inicio = ($pagina_actual - 1) * $registros_por_pagina;
                                 </div>
                                 <div class="form-group">
                                     <label for="clase" class="form-label">Clase</label>
-                                    <select class="form-control" name="clase" id="clase">
-                                        <option value="">-- selecionar --</option>
+                                    <select class="form-control" name="clase" id="clase" required>
                                         <?php
                                         $query_clases = "SELECT NID_Clase, N_Clase FROM cat_clases";
                                         $resultado_clases = mysqli_query($conexion, $query_clases);
                                         while ($filas = mysqli_fetch_assoc($resultado_clases)) {
-                                            echo "<option value='" . $filas['NID_Clase'] . "'>" . $filas['N_Clase'] . "</option>";
+                                            echo "<option value='" . $filas['N_Clase'] . "'>" . $filas['N_Clase'] . "</option>";
                                         }
                                         ?>
                                     </select>

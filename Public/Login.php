@@ -21,11 +21,11 @@ if ($filas) {
         }
     } else {
         // Redirigir con el parámetro de error
-        header("Location: Index.php?error=2");
+        header("Location: Index.html?error=2");
         exit(); // Terminar la ejecución del script después de la redirección
     }
 } else {
-    header("Location: Index.php?error=1");
+    header("Location: Index.html?error=1");
     exit(); // Terminar la ejecución del script después de la redirección
 }
 
