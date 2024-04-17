@@ -15,7 +15,7 @@
   </head>
   <body>
   <nav class="navbar navbar-expand-sm navbar-light bg-light demo">
-    <a class="navbar-brand" href="#" style="color:white;">
+    <a class="navbar-brand" href="index.php" style="color:white;">
       <picture>
         <source srcset="../Assets/Img/Logo.png" type="image/png">
         <img src="../Assets/Img/Logo.png" alt="Logo de la empresa" style="width: 75px;">
@@ -30,7 +30,7 @@
           <a class="nav-link" href="Clases.php" style="color:white;">Mis clases <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color:white;">Link</a>
+          <a class="nav-link" href="Asistencias.php" style="color:white;">Registrar asistencia</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">Dropdown</a>
