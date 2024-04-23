@@ -48,6 +48,10 @@
                             <a class="dropdown-item" href="Socios.php">Socios</a>
                         </div>
                     </li>
+<!--                    <li class="nav-item">
+                        <a class="nav-link" href="Reslpados.php" style="color:white;">Respaldos</a>
+                    </li>
+-->
                 </ul>
                 <form class="form-inline my-2 my-lg-0" method="POST" action="Cerrar.php">
                     <span class="mr-3 text-primary">

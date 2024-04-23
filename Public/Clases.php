@@ -59,8 +59,6 @@ $resultado_registros = mysqli_query($conexion, $query_registros);
         <table id="miTabla" class="table table-sm table-striped table-hover table-bordered text-center">
             <thead class="thead-dark text-white">
                 <tr>
-                <th>#</th>
-                    <th>Nombre de clase</th>
                     <th>Día</th>
                     <th>Hora de inicio</th>
                     <th>Hora de fin</th>
@@ -72,8 +70,6 @@ $resultado_registros = mysqli_query($conexion, $query_registros);
             <?php
                 while ($fila = mysqli_fetch_assoc($resultado_registros)) {
                     echo "<tr>";
-                    echo "<td>{$fila['NID_Clase']}</td>";
-                    echo "<td>{$fila['N_Clase']}</td>";
                     echo "<td>{$fila['N_Dia']}</td>";
                     echo "<td>{$fila['N_HoraInicio']}</td>";
                     echo "<td>{$fila['N_HoraFin']}</td>";

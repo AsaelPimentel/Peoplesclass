@@ -13,6 +13,7 @@ if ($filas = mysqli_fetch_array($resultado)) {
     if ($estado == 1 || $estado == 3) {
         header("Location: index.html?error=2");
     } else {
+        $_SESSION['Socio'] = $filas;
         $_SESSION['Usuario'] = $filas['N_Nombre'];
         header("Location: Client/Index.php");
     }
