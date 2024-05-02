@@ -44,7 +44,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">Asistencia</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownId">
                             <a class="dropdown-item" href="#">Registro de asistencia</a>
-                            <a class="dropdown-item" href="#">Reportes</a>
+                            <a class="dropdown-item" href="Reportes.php">Reportes</a>
                             <a class="dropdown-item" href="Socios.php">Socios</a>
                         </div>
                     </li>
