@@ -15,8 +15,55 @@ include('../Config/Conexion.php');
     <h4>Subir video de rutinas para las clases</h4>
     <div class="container">
         <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="Clase">Seleccionar Clase</label>
+                        <select name="Clase" id="Clase" class="form-control">
+                            <option value="">Seleccinar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Recurso">Tipo de recurso</label>
+                        <select name="Recurso" id="Recurso" class="form-control">
+                            <option value="">Seleccinar</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Seleccionar archivo</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileLang" lang="es">
+                            <label class="custom-file-label" for="customFileLang"></label>
+                        </div>
+                    </div>
+                    <button type="submit" id="Guardar" class="btn btn-success btn-block" name="Guardar">Subir Archivo</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Clase</th>
+                                <th>Tipo</th>
+                                <th>Recurso</th>
+                                <th>Descrpcioon</th>
+                                <th> Acciones </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Imprimir el contenido</td>
+                                <td>Imprimir el contenido</td>
+                                <td>Imprimir el contenido</td>
+                                <td>Imprimir el contenido</td>
+                                <td>Imprimir el contenido</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
