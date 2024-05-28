@@ -12,6 +12,7 @@ include('../Config/Conexion.php');
     cambiarTituloPagina("Videos");
 </script>
 <div class="container p-4">
+    <h4>Subir video de rutinas para las clases</h4>
     <div class="container">
         <div class="row">
             <div class="col-md-6"></div>
