@@ -5,7 +5,7 @@ CREATE TABLE `cat_asistencia` (
  `N_Asistio` varchar(50) NOT NULL COMMENT 'dato texto de la asitencia ej si asistio o no asistio',
  PRIMARY KEY (`NID_Asistio`),
  UNIQUE KEY `N_Asistio` (`N_Asistio`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de catoalogo de asistencias '
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de catoalogo de asistencias '
 
 CREATE TABLE `cat_clases` (
  `NID_Clase` int(11) NOT NULL AUTO_INCREMENT,
@@ -14,7 +14,7 @@ CREATE TABLE `cat_clases` (
  `ID_Entrenador` int(11) NOT NULL,
  PRIMARY KEY (`NID_Clase`),
  KEY `ID_Horario` (`ID_Horario`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci
 
 CREATE TABLE `cat_codigos` (
  `NID_Codigos` int(11) NOT NULL AUTO_INCREMENT COMMENT 'idenitficador de codigos para hcer un historial de codigos',
@@ -25,7 +25,7 @@ CREATE TABLE `cat_codigos` (
  PRIMARY KEY (`NID_Codigos`),
  KEY `fk_clase` (`ID_Clase`),
  CONSTRAINT `fk_clase` FOREIGN KEY (`ID_Clase`) REFERENCES `cat_clases` (`NID_Clase`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla de codigos para un mejor control de los mismos'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla de codigos para un mejor control de los mismos'
 
 CREATE TABLE `cat_entrenadores` (
  `NID_Entrenador` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador del catalogo cuando se agrege un nuevo entrendaor',
@@ -36,21 +36,21 @@ CREATE TABLE `cat_entrenadores` (
  KEY `ID_Clase` (`ID_Clase`),
  CONSTRAINT `cat_entrenadores_ibfk_1` FOREIGN KEY (`ID_Empleado`) REFERENCES `tb_empleados` (`N_Empleado`),
  CONSTRAINT `fk_empleado` FOREIGN KEY (`ID_Empleado`) REFERENCES `tb_empleados` (`N_Empleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci
 
 CREATE TABLE `cat_estados` (
  `NID_Estado` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Indentificador unico del estado',
  `N_Estado` varchar(50) NOT NULL COMMENT 'Nombre del estado (activo, inactivo, etc)',
  PRIMARY KEY (`NID_Estado`),
  UNIQUE KEY `N_Estado` (`N_Estado`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar estado disponibles en el sistema'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar estado disponibles en el sistema'
 
 CREATE TABLE `cat_generos` (
  `NID_Genero` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del genero',
  `N_Genero` varchar(50) NOT NULL COMMENT 'Nombre del genero',
  PRIMARY KEY (`NID_Genero`),
  UNIQUE KEY `N_Genero` (`N_Genero`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar generos disponibles en el sistema'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar generos disponibles en el sistema'
 
 	CREATE TABLE `cat_horarios` (
  `NID_Horario` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del horario',
@@ -59,7 +59,7 @@ CREATE TABLE `cat_generos` (
  `N_HoraFin` time NOT NULL COMMENT 'Hora de finalización del horario.',
  `N_Turno` varchar(2) NOT NULL COMMENT 'Turno del horario (AM o PM).',
  PRIMARY KEY (`NID_Horario`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT=' Tabla para almacenar horarios de actividades'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT=' Tabla para almacenar horarios de actividades'
 
 	CREATE TABLE `cat_recursos` (
  `NID_Recurso` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de del recurso',
@@ -72,7 +72,7 @@ CREATE TABLE `cat_roles` (
  `N_Rol` varchar(50) NOT NULL COMMENT 'Nombre del rol ej: Administrador, Entrenador, etc',
  PRIMARY KEY (`NID_Rol`),
  UNIQUE KEY `N_Rol` (`N_Rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar roles disponibles en el sistema'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar roles disponibles en el sistema'
 
 	CREATE TABLE `tb_asistencias` (
  `NID_Asistencias` int(11) NOT NULL AUTO_INCREMENT COMMENT 'identificador de asistencias',
@@ -85,7 +85,7 @@ CREATE TABLE `cat_roles` (
  PRIMARY KEY (`NID_Asistencias`),
  KEY `fk_asistencia` (`ID_Asistio`),
  CONSTRAINT `fk_asistencia` FOREIGN KEY (`ID_Asistio`) REFERENCES `cat_asistencia` (`NID_Asistio`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de asistencias de clases'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla de asistencias de clases'
 
 	CREATE TABLE `tb_empleados` (
  `N_Empleado` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Número de empleado',
@@ -107,7 +107,7 @@ CREATE TABLE `cat_roles` (
  CONSTRAINT `fk_estado_empleado` FOREIGN KEY (`ID_Estado`) REFERENCES `cat_estados` (`NID_Estado`),
  CONSTRAINT `fk_genero` FOREIGN KEY (`ID_Genero`) REFERENCES `cat_generos` (`NID_Genero`),
  CONSTRAINT `fk_rol` FOREIGN KEY (`ID_Rol`) REFERENCES `cat_roles` (`NID_Rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar información de empleados'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='Tabla para almacenar información de empleados'
 
 CREATE TABLE `tb_material` (
  `ID_Material` int(11) NOT NULL AUTO_INCREMENT COMMENT 'nimero de material',
@@ -140,7 +140,7 @@ CREATE TABLE `tb_socios` (
  KEY `fk_estado_socio` (`ID_Estado`),
  CONSTRAINT `fk_estado_socio` FOREIGN KEY (`ID_Estado`) REFERENCES `cat_estados` (`NID_Estado`),
  CONSTRAINT `fk_genero_socio` FOREIGN KEY (`N_Genero`) REFERENCES `cat_generos` (`NID_Genero`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla socios para accesos al sistema y datos generales'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci COMMENT='tabla socios para accesos al sistema y datos generales'
 
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `gymclass`.`vw_clases` AS select `cc`.`NID_Clase` AS `NID_Clase`,coalesce(`cc`.`N_Clase`,'-- Seleccionar --') AS `N_Clase`,coalesce(`ch`.`N_Dia`,'') AS `N_Dia`,coalesce(`ch`.`N_HoraInicio`,'') AS `N_HoraInicio`,coalesce(`ch`.`N_HoraFin`,'') AS `N_HoraFin`,coalesce(`ch`.`N_Turno`,'') AS `N_Turno`,coalesce(`ce`.`NID_Entrenador`,'') AS `ID_Entrenador`,coalesce(`te`.`N_Nombre`,'') AS `Nombre_Entrenador` from (((`gymclass`.`cat_clases` `cc` left join `gymclass`.`cat_horarios` `ch` on(`cc`.`ID_Horario` = `ch`.`NID_Horario`)) left join `gymclass`.`cat_entrenadores` `ce` on(`cc`.`ID_Entrenador` = `ce`.`NID_Entrenador`)) left join `gymclass`.`tb_empleados` `te` on(`ce`.`ID_Empleado` = `te`.`N_Empleado`))
